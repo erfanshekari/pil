@@ -1,8 +1,5 @@
 
-
-
 class FailedToParseInput(Exception):pass
-
 
 class OutPathAlreadyContainsFile(Exception):pass
 
