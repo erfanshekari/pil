@@ -70,3 +70,6 @@ Square and Resize image:
 pil -i input_image.png -a "square;resize:150x150;" -o output_image.jpg
 ~~~
 
+## License
+
+This project is licensed under the [MIT License](LICENSE).
