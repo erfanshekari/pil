@@ -7,7 +7,7 @@ CUR_DIR=$(pwd)
 
 echo "
 #!/bin/bash
-$CUR_DIR/env/bin/python main.py \$@
+$CUR_DIR/env/bin/python $CUR_DIR/main.py \$@
 " > pil.sh
 
 chmod +x pil.sh
