@@ -1,19 +1,20 @@
-# pil
+pil
+===
 
 pil is a cli tool that allows you to seamlessly convert and manipulate image formats.
 pil cli uses python pillow which is highly fast and powerful.
 
 ## Features
-* Format Conversion
-     You can effortlessly convert images from one format to another. Simply specify the input and output formats, and the software will handle the conversion process.
-* Image Optimization
-    Pillow provides an effective image compression feature. It reduces the file size of images, optimizing them for storage and quicker transmission without compromising their visual quality.
-* Image Compression
-    The software provides efficient image compression capabilities. It reduces file sizes without compromising image quality, allowing for optimized storage and faster file transfer.
-* Resizing Image
-    You can easily resize images to fit specific dimensions or aspect ratios. The software ensures high-quality resizing with no loss of image details.
-* Square Image
-    By converting images into a square shape, the software ensures a uniform and visually appealing presentation. Square-cropped images are commonly used for social media profiles, galleries, and various applications where consistency in appearance is important.
+#### Format Conversion
+You can effortlessly convert images from one format to another. Simply specify the input and output formats, and the software will handle the conversion process.
+#### Image Optimization
+Pillow provides an effective image compression feature. It reduces the file size of images, optimizing them for storage and quicker transmission without compromising their visual quality.
+#### Image Compression
+The software provides efficient image compression capabilities. It reduces file sizes without compromising image quality, allowing for optimized storage and faster file transfer.
+#### Resizing Image
+You can easily resize images to fit specific dimensions or aspect ratios. The software ensures high-quality resizing with no loss of image details.
+#### Square Image
+By converting images into a square shape, the software ensures a uniform and visually appealing presentation. Square-cropped images are commonly used for social media profiles, galleries, and various applications where consistency in appearance is important.
 
 ## Installation
 Make sure you have Python 3.8+, pip3 and venv installed before installing.
