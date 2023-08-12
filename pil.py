@@ -1,4 +1,5 @@
-# !/usr/bin/python3
+#!./env/bin/python
+
 import argparse
 from pil import cli
 
