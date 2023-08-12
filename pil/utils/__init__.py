@@ -1,5 +1,6 @@
 import os
-
+from PIL import Image
+from .file_size import file_size
 
 def check_outpath_before_save(o: str) -> None:
     
@@ -12,3 +13,7 @@ def check_outpath_before_save(o: str) -> None:
         
         if not os.path.isdir(current_dir):
             os.mkdir(current_dir)
+
+def print_image_info(image: Image, extension:str, size:int, label='INPUT') -> None:
+    print(f'{label} {image.mode} ({extension}) {image.width}x{image.height} {file_size(size)}')
+

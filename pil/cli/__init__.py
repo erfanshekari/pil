@@ -1,14 +1,24 @@
-import os
+import os, time
 from argparse import Namespace
 from pil import io as pilio
-from pil.utils import conversion, check_outpath_before_save
+from pil.utils import (
+    conversion,
+    check_outpath_before_save,
+    print_image_info
+)
 from pil import actions
 
 def handler(args: Namespace):
+
+    start_time = time.time()
+
+    input_as_bytes = pilio.read_input_arg(args.input)
     
-    image = pilio.bytes_to_image(pilio.read_input_arg(args.input))
+    image = pilio.bytes_to_image(input_as_bytes)
 
     filename, extension = pilio.parse_input_filename(args.input)
+    
+    print_image_info(image, extension, len(input_as_bytes))
     
     if args.output and not args.overwrite:
         pilio.read_output_arg(args.output)
@@ -35,5 +45,19 @@ def handler(args: Namespace):
     if quality and quality > 100:
         quality = 100
 
+
     check_outpath_before_save(output_path)
     image.save(output_path, optimize=args.optimize, quality=quality)
+    
+    out_file_size = os.path.getsize(output_path)
+    
+    print_image_info(
+        image,
+        extension if not 'o_extenstion' in locals() else o_extenstion,
+        out_file_size,
+        'OUTPUT',
+    )
+
+    end_time = time.time()
+
+    print(f'saved {round((end_time - start_time), 10)} seconds\n{os.path.abspath(output_path)}')
