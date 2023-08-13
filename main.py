@@ -1,9 +1,13 @@
 import argparse
 from pil import cli
+import tracemalloc
+from pil.utils.file_size import file_size
+
 
 def main(args): cli.handler(args)
 
 if __name__ == '__main__':
+    tracemalloc.start()
     parser = argparse.ArgumentParser(
         prog='PIL cli',
         description='edit images on cmd, powerd by pillow and python',
@@ -51,3 +55,9 @@ if __name__ == '__main__':
     )
 
     main(parser.parse_args())
+   
+    _, peak = tracemalloc.get_traced_memory()
+
+    print(f'Total Memory Usage: {file_size(peak)}')
+
+    tracemalloc.stop()
