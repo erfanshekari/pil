@@ -9,7 +9,7 @@ def main(args): cli.handler(args)
 if __name__ == '__main__':
     tracemalloc.start()
     parser = argparse.ArgumentParser(
-        prog='PIL cli',
+        prog='PIL',
         description='edit images on cmd, powerd by pillow and python',
         usage="pil [...Options] -i INPUT -o OUTPUT"
     )
