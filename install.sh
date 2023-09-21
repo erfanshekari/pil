@@ -16,7 +16,7 @@ $CUR_DIR/env/bin/python $CUR_DIR/probe.py \$@
 " > pilprobe.sh
 
 chmod +x pil.sh
-ln -s "$(pwd)/pil.sh" /bin/pil
+ln -s "$(pwd)/pil.sh" /usr/bin/pil
 chmod +x pilprobe.sh
-ln -s "$(pwd)/pilprobe.sh" /bin/pilprobe
+ln -s "$(pwd)/pilprobe.sh" /usr/bin/pilprobe
 pil --help
