@@ -5,6 +5,7 @@ from .resize import resize
 
 def parser(actions: str) -> List[Tuple[str, Any]]:
     actions_ = []
+    actions = actions.replace('"', '')
     for action in actions.split(';'):
         values = action.split(':')
         if len(values) == 2:
@@ -15,7 +16,7 @@ def parser(actions: str) -> List[Tuple[str, Any]]:
     return actions_
 
 def handler(image: Image, actions: str) -> Image:
-
+    print(parser(actions))
     for action in parser(actions):
         method, arg = action
         
