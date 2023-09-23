@@ -1,7 +1,6 @@
-import os, io, validators, requests
+import os, io, requests
 from posixpath import basename
 from pil.exceptions import (
-    FailedToParseInput,
     OutPathAlreadyContainsFile,
     OutPathIsDirectory,
     FileNameWithNoExtenstion
@@ -16,7 +15,7 @@ def read_input_arg(i: str) -> bytes:
         with open(i, 'rb') as f:
             _ary += f.read()
         return _ary
-    if validators.url(i):
+    else:
         _ary = b''
         with requests.get(i, stream=True, timeout=5) as r:
             r.raise_for_status()
@@ -24,13 +23,9 @@ def read_input_arg(i: str) -> bytes:
                 _ary += chunk
         return _ary
 
-    raise FailedToParseInput(f'Failed to parse {i}')
-
-
 def bytes_to_image(b: bytes) -> Image:
     return Image.open(io.BytesIO(b))
     
-
 def read_output_arg(o: str) -> None:
     if os.path.isfile(o):
         raise OutPathAlreadyContainsFile("The output path you specified already contains a file. If you want to overwrite an existing file, you must add the --overwrite flag.")
@@ -44,8 +39,9 @@ def export_filename_extension_from_unix_path(path: str) -> Tuple[str, str]:
         return filename, extenstion
 
 def parse_input_filename(i: str) -> Tuple[str, str]:
-    if validators.url(i):
-        return export_filename_extension_from_unix_path(urlparse(i).path)
+    as_url = urlparse(i)
+    if as_url.hostname:
+        return export_filename_extension_from_unix_path(as_url.path)
     if not '.' in i:
         raise FileNameWithNoExtenstion("The input filename does not have an extension, so you must specify a filename with the extension in the output.")
     return export_filename_extension_from_unix_path(i)
