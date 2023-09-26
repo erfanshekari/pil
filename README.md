@@ -1,5 +1,6 @@
 pil
 ===
+![PIL cli](doc/images/pil.cli.jpg)
 
 pil is a cli tool that allows you to seamlessly convert and manipulate image formats.
 pil cli uses python pillow which is highly fast and powerful.
