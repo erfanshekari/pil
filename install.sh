@@ -15,8 +15,32 @@ echo "
 $CUR_DIR/env/bin/python $CUR_DIR/probe.py \$@
 " > pilprobe.sh
 
+add_permissions()
+{
 chmod +x pil.sh
-ln -s "$(pwd)/pil.sh" /usr/bin/pil
 chmod +x pilprobe.sh
+}
+
+install_on_linux()
+{
+ln -s "$(pwd)/pil.sh" /usr/bin/pil
 ln -s "$(pwd)/pilprobe.sh" /usr/bin/pilprobe
-pil --help
+}
+
+install_on_mac()
+{
+ln -s "$(pwd)/pil.sh" ~/bin/pil
+ln -s "$(pwd)/pilprobe.sh" ~/bin/pilprobe
+}
+
+add_permissions
+
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)
+        install_on_linux
+    ;;
+    Darwin*)
+        install_on_mac
+    ;;
+esac

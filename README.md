@@ -16,6 +16,10 @@ You can easily resize images to fit specific dimensions or aspect ratios. The so
 #### Square Image
 By converting images into a square shape, the software ensures a uniform and visually appealing presentation. Square-cropped images are commonly used for social media profiles, galleries, and various applications where consistency in appearance is important.
 
+## Supported Platforms
+* Linux
+* Macos
+
 ## Installation
 Make sure you have Python 3.8+, pip3 and venv installed before installing.
 To install pil cli clone this repo and run install script:
