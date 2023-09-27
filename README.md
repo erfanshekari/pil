@@ -103,6 +103,23 @@ Output:
 {"contentType": "image/webp", "size": 163904, "extension": "webp", "name": "input", "width": 800, "height": 450}
 ```
 
+
+## Contributing
+
+We welcome contributions from the community! If you'd like to contribute to this project, please follow these guidelines:
+
+1. **Fork** the repository on GitHub.
+2. Create a **new branch** with a descriptive name for your feature or bug fix.
+3. Make your changes and **commit** them, providing a clear and concise commit message.
+4. **Push** your changes to your fork.
+5. Submit a **pull request** to the main repository's `main` branch.
+
+
+### Reporting Issues
+
+If you encounter any issues with the project or have suggestions for improvements, please feel free to [open an issue](https://github.com/erfanshekari/pil/issues).
+
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE.md).
