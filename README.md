@@ -1,37 +1,45 @@
-PIL
-===
-![PIL cli](doc/images/pil.cli.png)
+# PIL - Feel power of pillow in cli
 
-pil is a cli tool that allows you to seamlessly convert and manipulate image formats.
-pil cli uses python pillow which is highly fast and powerful.
+![PIL CLI](doc/images/pil.cli.png)
+
+PIL is a command-line tool that simplifies image format conversion and manipulation using Python Pillow, a fast and powerful imaging library.
 
 ## Features
-#### Format Conversion
-You can effortlessly convert images from one format to another. Simply specify the input and output formats, and the software will handle the conversion process.
-#### Image Optimization
-Pillow provides an effective image compression feature. It reduces the file size of images, optimizing them for storage and quicker transmission without compromising their visual quality.
-#### Image Compression
-The software provides efficient image compression capabilities. It reduces file sizes without compromising image quality, allowing for optimized storage and faster file transfer.
-#### Resizing Image
-You can easily resize images to fit specific dimensions or aspect ratios. The software ensures high-quality resizing with no loss of image details.
-#### Square Image
-By converting images into a square shape, the software ensures a uniform and visually appealing presentation. Square-cropped images are commonly used for social media profiles, galleries, and various applications where consistency in appearance is important.
+
+### Format Conversion
+Easily convert images from one format to another. Just specify the input and output formats, and PIL will handle the conversion process.
+
+### Image Optimization
+Pillow provides effective image compression, reducing file sizes while preserving visual quality for efficient storage and faster transmission.
+
+### Image Compression
+Efficiently reduce image file sizes without compromising quality, allowing for optimized storage and speedy file transfers.
+
+### Resizing Images
+Resize images to specific dimensions or aspect ratios with high-quality results and no loss of image details.
+
+### Square Images
+PIL can convert images into square shapes for uniform and visually appealing presentations, commonly used for social media profiles, galleries, and applications requiring consistent appearance.
 
 ## Supported Platforms
+
 * Linux
-* Macos
+* macOS
 
 ## Installation
-Make sure you have Python 3.8+, pip3 and venv installed before installing.
-To install pil cli clone this repo and run install script:
-~~~shell
+
+Ensure you have Python 3.8+, pip3, and venv installed before proceeding.
+
+To install PIL CLI, clone this repository and run the installation script:
+
+```shell
 git clone https://github.com/erfanshekari/pil.git
 cd pil
 sudo sh install.sh
-~~~
+
 
 ## Usage
-Use the --help flag for available items:
+Use the --help flag to view available options and commands:
 ~~~shell
 pil --help
 ~~~
@@ -53,6 +61,8 @@ options:
                         Spacify image quality
   --optimize, -O        Optimize image
 ~~~
+
+Example commands:
 
 Convert png to webp:
 ~~~shell
