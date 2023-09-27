@@ -93,6 +93,16 @@ Square and Resize image:
 pil -i input_image.png -a "square;resize:150x150;" -o output_image.jpg
 ```
 
+## PILProbe
+View image details in json using pilprobe command.
+```bash
+pilprobe -i input.webp
+```
+Output:
+```json
+{"contentType": "image/webp", "size": 163904, "extension": "webp", "name": "input", "width": 800, "height": 450}
+```
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE.md).
