@@ -16,7 +16,6 @@ def parser(actions: str) -> List[Tuple[str, Any]]:
     return actions_
 
 def handler(image: Image, actions: str) -> Image:
-    print(parser(actions))
     for action in parser(actions):
         method, arg = action
         

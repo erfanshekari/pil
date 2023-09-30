@@ -61,6 +61,7 @@ options:
   --quality QUALITY, -q QUALITY
                         Spacify image quality
   --optimize, -O        Optimize image
+  --verbose, -v         print details of operation
 ```
 
 Example commands:
@@ -94,7 +95,7 @@ pil -i input_image.png -a "square;resize:150x150;" -o output_image.jpg
 ```
 
 ## PILProbe
-View image details in json using pilprobe command.
+View image details in json using `pilprobe` command.
 ```bash
 pilprobe -i input.webp
 ```
