@@ -1,7 +1,10 @@
-from PIL import Image
 from typing import List, Tuple, Any
-from .square import square
+
+from PIL import Image
+
 from .resize import resize
+from .square import square
+
 
 def parser(actions: str) -> List[Tuple[str, Any]]:
     actions_ = []
@@ -15,14 +18,15 @@ def parser(actions: str) -> List[Tuple[str, Any]]:
                 actions_.append((values[0], None))
     return actions_
 
+
 def handler(image: Image, actions: str) -> Image:
     for action in parser(actions):
         method, arg = action
-        
+
         if method.lower() == 'square':
             image = square(image)
 
         if method.lower() == 'resize':
             image = resize(image, arg)
-        
+
     return image

@@ -1,7 +1,10 @@
 import argparse
+
 from pil.probe import cli
 
+
 def main(args): cli.handler(args)
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
@@ -11,11 +14,10 @@ if __name__ == '__main__':
     )
 
     parser.add_argument(
-        '--input', '-i', 
-        type=str, 
-        help='The input image can be a Unix path or url', 
+        '--input', '-i',
+        type=str,
+        help='The input image can be a Unix path or url',
         required=True,
     )
 
     main(parser.parse_args())
-   
