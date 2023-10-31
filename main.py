@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(
         prog='PIL',
-        description='edit images on cmd, powerd by pillow and python',
+        description='edit images on cmd, powered by pillow and python',
         usage="pil [...Options] -i INPUT -o OUTPUT"
     )
 
@@ -22,6 +22,7 @@ if __name__ == '__main__':
         type=str,
         help='The input image can be a Unix path or url',
         required=True,
+        metavar='-I'
     )
 
     parser.add_argument(
@@ -47,7 +48,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '--quality', '-q',
         type=int,
-        help='Spacify image quality',
+        help='Specify image quality',
         required=False,
     )
 

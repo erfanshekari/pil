@@ -11,6 +11,10 @@ from pil.utils import (
 )
 
 
+default_quality = 75
+maximum_quality = 95
+
+
 def handler(args: Namespace):
     if args.verbose:
         start_time = time.time()
@@ -28,7 +32,8 @@ def handler(args: Namespace):
         pilio.read_output_arg(args.output)
 
     if args.output:
-        _, o_extension = pilio.export_filename_extension_from_unix_path(args.output)
+        _, o_extension = pilio.export_filename_extension_from_unix_path(
+            args.output)
         if o_extension != extension:
             image = conversion.handle_conversion(image, extension, o_extension)
 
@@ -44,12 +49,16 @@ def handler(args: Namespace):
     quality = args.quality
 
     if not quality:
-        quality = 0
-    if quality and quality > 100:
-        quality = 100
+        quality = default_quality
+    if quality and quality > maximum_quality:
+        quality = maximum_quality
 
     check_outpath_before_save(output_path)
-    image.save(output_path, optimize=args.optimize, quality=quality)
+    image.save(output_path, optimize=args.optimize,
+               subsampling=0, quality=quality)
+
+    if not args.verbose:
+        print(f'converted successfully!')
 
     out_file_size = os.path.getsize(output_path)
 
@@ -63,4 +72,5 @@ def handler(args: Namespace):
 
     if args.verbose:
         end_time = time.time()
-        print(f'saved {round((end_time - start_time), 10)} seconds\n{os.path.abspath(output_path)}')
+        print(
+            f'saved {round((end_time - start_time), 10)} seconds\n{os.path.abspath(output_path)}')
