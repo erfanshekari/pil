@@ -1,7 +1,7 @@
 from PIL import Image
 
+
 def resize(image: Image, arg: str) -> Image:
-    
     width, height = arg.split('x')
 
     is_var = lambda x: True if x == 'w' or x == 'h' else False
@@ -15,4 +15,3 @@ def resize(image: Image, arg: str) -> Image:
         height = int(float(width) * ratio)
 
     return image.resize((int(width), int(height)))
-

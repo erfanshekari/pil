@@ -1,12 +1,12 @@
 import json
 from argparse import Namespace
+
 from pil import io as pilio
 
 
 def handler(args: Namespace):
-
     input_as_bytes = pilio.read_input_arg(args.input)
-    
+
     image = pilio.bytes_to_image(input_as_bytes)
 
     filename, extension = pilio.parse_input_filename(args.input)
@@ -21,3 +21,4 @@ def handler(args: Namespace):
     }
 
     print(json.dumps(details))
+   

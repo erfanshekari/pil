@@ -7,24 +7,29 @@ PIL is a command-line tool that simplifies image format conversion and manipulat
 ## Features
 
 ### Format Conversion
+
 Easily convert images from one format to another. Just specify the input and output formats, and PIL will handle the conversion process.
 
 ### Image Optimization
+
 Pillow provides effective image compression, reducing file sizes while preserving visual quality for efficient storage and faster transmission.
 
 ### Image Compression
+
 Efficiently reduce image file sizes without compromising quality, allowing for optimized storage and speedy file transfers.
 
 ### Resizing Images
+
 Resize images to specific dimensions or aspect ratios with high-quality results and no loss of image details.
 
 ### Square Images
+
 PIL can convert images into square shapes for uniform and visually appealing presentations, commonly used for social media profiles, galleries, and applications requiring consistent appearance.
 
 ## Supported Platforms
 
-* Linux
-* macOS
+- Linux
+- macOS
 
 ## Installation
 
@@ -39,11 +44,13 @@ sudo sh install.sh
 ```
 
 ## Usage
+
 Use the --help flag to view available options and commands:
 
 ```bash
 pil --help
 ```
+
 ```
 usage: pil [...Options] -i INPUT -o OUTPUT
 
@@ -67,43 +74,59 @@ options:
 Example commands:
 
 Convert png to webp:
+
 ```bash
 pil -i input_image.png -o output_image.webp
 ```
 
 Compress image:
+
 ```bash
 pil -q 90 -O -i input_image.png -o output_image.jpg
 ```
 
 Resize image while maintaining aspect ratio:
+
 ```bash
 pil -i input_image.png -a "resize:wx150;" -o output_image.jpg
 ```
+
 ```bash
 pil -i input_image.png -a "resize:300xh;" -o output_image.jpg
 ```
 
 Square image:
+
 ```bash
 pil -i input_image.png -a "square;" -o output_image.jpg
 ```
 
 Square and Resize image:
+
 ```bash
 pil -i input_image.png -a "square;resize:150x150;" -o output_image.jpg
 ```
 
 ## PILProbe
+
 View image details in json using `pilprobe` command.
+
 ```bash
 pilprobe -i input.webp
 ```
-Output:
-```json
-{"contentType": "image/webp", "size": 163904, "extension": "webp", "name": "input", "width": 800, "height": 450}
-```
 
+Output:
+
+```json
+{
+  "contentType": "image/webp",
+  "size": 163904,
+  "extension": "webp",
+  "name": "input",
+  "width": 800,
+  "height": 450
+}
+```
 
 ## Contributing
 
@@ -115,11 +138,9 @@ We welcome contributions from the community! If you'd like to contribute to this
 4. **Push** your changes to your fork.
 5. Submit a **pull request** to the main repository's `main` branch.
 
-
 ### Reporting Issues
 
 If you encounter any issues with the project or have suggestions for improvements, please feel free to [open an issue](https://github.com/erfanshekari/pil/issues).
-
 
 ## License
 

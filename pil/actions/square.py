@@ -1,7 +1,9 @@
 from PIL import Image
 
+
 def square(image: Image) -> Image:
-    if image.width == image.height: return image
+    if image.width == image.height:
+        return image
 
     left, top, right, bottom = 0, 0, 0, 0
 
